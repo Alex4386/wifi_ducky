@@ -15,18 +15,18 @@
 	</head>
 	<body>
 		<nav>
-			<a href="index.html">Scripts</a>
-			<a href="live.html">Live Execute</a>
-			<a href="settings.html">Settings</a>
+			<a href="index.html">스크립트</a>
+			<a href="live.html">라이브 실행</a>
+			<a href="settings.html">설정</a>
 			<ul class="nav right">
-				<a href="info.html">Info</a>
+				<a href="info.html">정보</a>
 			<ul>
 		</nav>
 		<div id="error"></div>
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
-					<h1 class="header">Scripts</h1>
+					<h1 class="header">스크립트</h1>
 					<p id="memory">
 						<button class="button-warn" onclick="format()">format</button> 
 						<meter id="memoryGraph" value="" max="1" min="0"></meter> 
@@ -35,9 +35,9 @@
 					
 					<table id="scriptlist">
 						<tr>
-							<th>Name</th>
-							<th>Size</th>
-							<th>Run</th>
+							<th>이름</th>
+							<th>용량</th>
+							<th>실행</th>
 						</tr>
 					</table>
 					
@@ -68,7 +68,7 @@
 					
 					memorySize.innerHTML = res.usedBytes+" / "+res.totalBytes+"KB ("+(res.totalBytes-res.usedBytes)+"KB available)";
 					
-					var tableHTML = "<tr><th>Name</th><th>Size</th><th>Run</th></tr>";
+					var tableHTML = "<tr><th>이름</th><th>용량</th><th>실행</th></tr>";
 					for(var i=0;i<res.list.length;i++){
 						tableHTML += "<tr>";
 						tableHTML += "<td><a href='view.html?script="+res.list[i].n+"'>"+res.list[i].n+"</a></td>";

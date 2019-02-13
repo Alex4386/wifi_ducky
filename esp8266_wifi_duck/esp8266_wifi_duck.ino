@@ -14,7 +14,7 @@
 #define debug false
 
 /* ============= CHANGE WIFI CREDENTIALS ============= */
-const char *ssid = "WiFi Duck";
+const char *ssid = "WhatDoesTheDuckSay";
 const char *password = "quackquack"; //min 8 chars
 /* ============= ======================= ============= */
 

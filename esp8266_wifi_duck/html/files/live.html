@@ -15,25 +15,25 @@
 	</head>
 	<body>
 		<nav>
-			<a href="index.html">Scripts</a>
-			<a href="live.html">Live Execute</a>
-			<a href="settings.html">Settings</a>
+			<a href="index.html">스크립트</a>
+			<a href="live.html">라이브 실행</a>
+			<a href="settings.html">설정</a>
 			<ul class="nav right">
-				<a href="info.html">Info</a>
+				<a href="info.html">정보</a>
 			<ul>
 		</nav>
 		<div id="error"></div>
 		<div class="container">
 			<div class="row">
 				<div class="twelve columns">
-					<h1 class="header">Live Execute</h1>
+					<h1 class="header">라이브 실행</h1>
 					
 					<form>
 						<textarea id="scriptTextArea" name='script' maxlength="1024" placeholder="STRING Hello World!" onkeyup="count()" onkeydown="count()" onchange="count()"></textarea>
 						<p><span id="charCount">0</span> / 1024</p>
 					</form>
-					<button onclick="save()" class="left">save script</button>
-					<button onclick="run()" class="button-primary right">run script</button>
+					<button onclick="save()" class="left">스크립트 저장</button>
+					<button onclick="run()" class="button-primary right">스크립트 실행</button>
 					
 					<br />
 					<br />
@@ -41,133 +41,159 @@
 					
 					<table>
 						<tr>
-							<th>Command</th>
-							<th>Description</th>
+							<th>명령어</th>
+							<th>설명</th>
+							<th>입력</th>
 						</tr>
 						
 						<tr>
-							<td>REM</td>
-							<td>Comment</td>
+							<td>REM &lt;할말&gt;</td>
+							<td>주석</td>
+							<td><button onclick="writeScript('REM hello')">입력</button></td>
 						</tr>
 						
 						<tr>
-							<td>DEFAULTDELAY</td>
-							<td>Time in ms betweet every command</td>
+							<td>DEFAULTDELAY &lt;시간 (ms)&gt;</td>
+							<td>명령어 실행 후 대기시간 설정 (ms)</td>
+							<td><button onclick="writeScript('DEFAULTDELAY 10')">입력</button></td>
 						</tr>
 						
 						<tr>
-							<td>DELAY</td>
-							<td>Delay in ms</td>
+							<td>DELAY &lt;시간 (ms)&gt;</td>
+							<td>ms동안 대기</td>
+							<td><button onclick="writeScript('DELAY 10')">입력</button></td>
 						</tr>
 						
 						<tr>
-							<td>STRING</td>
-							<td>Types the following string</td>
+							<td>STRING &lt;string&gt;</td>
+							<td>string 입력</td>
+							<td><button onclick="writeScript('STRING string')">입력</button></td>
 						</tr>
 						
 						<tr>
-							<td>REPLAY</td>
-							<td>Repeats the last command n times</td>
+							<td>REPLAY &lt;횟수&gt;</td>
+							<td>마지막 명령을 지정된 횟수 만큼 반복함</td>
+							<td><button onclick="writeScript('REPLAY 5')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>GUI</td>
-							<td>Windows or CMD key</td>
+							<td>Windows 또는 CMD 키</td>
+							<td><button onclick="writeScript('GUI')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>SHIFT</td>
-							<td>Shift key</td>
+							<td>Shift 키</td>
+							<td><button onclick="writeScript('SHIFT')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>ALT</td>
-							<td>Alt key</td>
+							<td>Alt 키</td>
+							<td><button onclick="writeScript('ALT')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>CTRL</td>
-							<td>Ctrl key</td>
+							<td>Ctrl 키</td>
+							<td><button onclick="writeScript('CTRL')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>ENTER</td>
-							<td>Return key</td>
+							<td>Return 키</td>
+							<td><button onclick="writeScript('ENTER')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>DELETE</td>
-							<td>Backspace key</td>
+							<td>Backspace 키</td>
+							<td><button onclick="writeScript('DELETE')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>ESC</td>
-							<td>ESC key</td>
+							<td>ESC 키</td>
+							<td><button onclick="writeScript('ESC')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>INSERT</td>
-							<td>Insert key</td>
+							<td>Insert 키</td>
+							<td><button onclick="writeScript('INSERT')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>SPACE</td>
-							<td>Space key</td>
+							<td>Space 키</td>
+							<td><button onclick="writeScript('SPACE')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>TAB</td>
-							<td>Tabulator key</td>
+							<td>Tab 키</td>
+							<td><button onclick="writeScript('TAB')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>DOWN</td>
-							<td>Down Arrow Key</td>
+							<td>↓키</td>
+							<td><button onclick="writeScript('DOWN')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>LEFT</td>
-							<td>Left Arrow Key</td>
+							<td>←키</td>
+							<td><button onclick="writeScript('LEFT')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>RIGHT</td>
-							<td>Right Arrow Key</td>
+							<td>→키</td>
+							<td><button onclick="writeScript('RIGHT')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>UP</td>
-							<td>Up Arrow Key</td>
+							<td>↑키</td>
+							<td><button onclick="writeScript('UP')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>CAPSLOCK</td>
-							<td>Toggles Capslock</td>
+							<td>Capslock키</td>
+							<td><button onclick="writeScript('CAPSLOCK')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>HOME</td>
-							<td>Home key</td>
+							<td>Home 키</td>
+							<td><button onclick="writeScript('HOME')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>APP</td>
-							<td>App key</td>
+							<td>App 키</td>
+							<td><button onclick="writeScript('APP')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>MENU</td>
-							<td>Menu key</td>
+							<td>Menu 키</td>
+							<td><button onclick="writeScript('MENU')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>PAGEUP</td>
-							<td>Pageup key</td>
+							<td>Pageup 키</td>
+							<td><button onclick="writeScript('PAGEUP')">입력</button></td>
 						</tr>
 						
 						<tr>
 							<td>PAGEDOWN</td>
-							<td>Pagedown key</td>
+							<td>Pagedown 키</td>
+							<td><button onclick="writeScript('PAGEDOWN')">입력</button></td>
 						</tr>
 						
 						
@@ -175,13 +201,15 @@
 					
 					<p>
 						For more information about Ducky Script click <a href="https://github.com/hak5darren/USB-Rubber-Ducky">here</a>, 
-						copyright goes to <a href="https://www.hak5.org/">Hak5</a> <3 .
+						copyright goes to <a href="https://www.hak5.org/">Hak5</a> &lt;3 .
 					</p>
 					
 				</div>
 			</div>
 		</div>
 		<script>
+			var sc = document.getElementById('scriptTextArea');
+			function writeScript(s) { sc.value += "\n"+s; }
 		
 			function count(){
 				document.getElementById("charCount").innerHTML = document.getElementById("scriptTextArea").value.length;
@@ -190,17 +218,17 @@
 			function run(){
 				var script = document.getElementById("scriptTextArea").value.replace(/\n\r?/g, '%0D');
 				getResponse("run?script="+script,function(responseText){
-					if(responseText == "true") showMessage("Executing Script...",2500);
+					if(responseText == "true") showMessage("스크립트 실행 중...",2500);
 				},undefined,undefined, "POST");
 			}
 			
 			function save(){
-				var scriptName = prompt("Scriptname:");
+				var scriptName = prompt("스크립트 이름을 지어주세요:");
 				if(scriptName !== null){
 					var script = document.getElementById("scriptTextArea").value.replace(/\n\r?/g, '%0D');
 					console.log(script);
 					getResponse("save?name="+scriptName+"&script="+script,function(responseText){
-						if(responseText == "true") showMessage("Script saved as '"+scriptName+"'",2500);
+						if(responseText == "true") showMessage("스크립트가 '"+scriptName+"'로 저장되었습니다",2500);
 					},undefined,undefined, "POST");
 				}
 			}
